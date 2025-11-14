@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Momentum OS — Home</title>
+<link rel="preload" href="assets/style.css" as="style" />
+<link rel="stylesheet" href="assets/style.css" />
+<meta name="color-scheme" content="dark light">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="index.html">Momentum OS</a>
+    <div class="links">
+      <a href="attack-mode.html">Attack Mode</a>
+      <a href="nuke-today.html">Nuke Today</a>
+      <a href="new-me.html">New Me</a>
+      <a href="nuke-xyz.html">Nuke XYZ</a>
+      <a href="nuclear-system.html">Nuclear System</a>
+    </div>
+    <div class="tools" aria-label="Theme">
+      <button class="mini" data-theme="auto" aria-label="Auto theme">🌓</button>
+      <button class="mini" data-theme="dark" aria-label="Dark theme">🌑</button>
+      <button class="mini" data-theme="light" aria-label="Light theme">☀️</button>
+      <button class="mini" data-theme="contrast" aria-label="High contrast">⚙️</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Design your day. Ship your week.</h1>
+    <p class="muted">Evidence-based workflows: clarity, time-blocking, precommitment, reflection, and review.</p>
+    <div class="row">
+      <a class="btn" href="nuke-today.html">Start today</a>
+      <a class="btn ghost" href="nuke-xyz.html">Set a mission</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Identity statement</h2>
+    <p id="homeIdentity" class="quote">I focus on one meaningful task at a time.</p>
+    <div class="row">
+      <input id="homeIdentityInput" type="text" placeholder="Rewrite your identity statement" />
+      <button class="mini" id="homeIdentitySave">Save</button>
+    </div>
+  </section>
+
+  <section class="card grid-3">
+    <div>
+      <h3>Streak</h3>
+      <div id="homeStreak" class="metric">0</div>
+    </div>
+    <div>
+      <h3>Level</h3>
+      <div id="homeLevel" class="metric">1</div>
+    </div>
+    <div>
+      <h3>XP</h3>
+      <div id="homeXP" class="metric">0</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Weekly progress</h2>
+    <div class="progress"><div id="homeProgressBar" class="bar" style="width:0%"></div></div>
+    <p class="muted" id="homeProgressText">0% from missions + points</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Built for clarity, not compulsion.</p>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+  Momentum.home();
+</script>
+</body>
+</html>
