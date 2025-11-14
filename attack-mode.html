@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Attack Mode — Core engine</title>
+<link rel="stylesheet" href="assets/style.css" />
+<meta name="color-scheme" content="dark light">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="index.html">Momentum OS</a>
+    <div class="links">
+      <a class="active" href="attack-mode.html">Attack Mode</a>
+      <a href="nuke-today.html">Nuke Today</a>
+      <a href="new-me.html">New Me</a>
+      <a href="nuke-xyz.html">Nuke XYZ</a>
+      <a href="nuclear-system.html">Nuclear System</a>
+    </div>
+    <div class="tools">
+      <button class="mini" data-theme="auto">🌓</button>
+      <button class="mini" data-theme="dark">🌑</button>
+      <button class="mini" data-theme="light">☀️</button>
+      <button class="mini" data-theme="contrast">⚙️</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="subhero">
+    <h1>Attack Mode</h1>
+    <p class="muted">Neuroplasticity, success systems, wisdom, mindset, planning, journaling, motivation, and review.</p>
+  </section>
+
+  <!-- Neuroplasticity -->
+  <section class="card">
+    <h2>Neuroplasticity tracker</h2>
+    <p class="muted">Repetition builds pathways → automaticity reduces effort.</p>
+    <div class="row">
+      <input id="amSkill" type="text" placeholder="Skill to reinforce (e.g., deep work)" />
+      <button class="mini" id="amSkillAdd">Add skill</button>
+    </div>
+    <div id="amSkillList" class="list"></div>
+  </section>
+
+  <!-- Success formula -->
+  <section class="card">
+    <h2>Success formula</h2>
+    <p class="muted">Daily system + rapid problem solving. Evolve your system using Pareto.</p>
+    <div class="row">
+      <input id="amSystem" type="text" placeholder="Describe today’s system change (e.g., 2x 25m blocks)" />
+      <button class="mini" id="amSystemAdd">Add</button>
+    </div>
+    <div class="progress"><div class="bar" id="amParetoBar"></div></div>
+    <p class="muted" id="amParetoText">Start at 20% success, grow with iteration.</p>
+    <div id="amSystemList" class="list"></div>
+  </section>
+
+  <!-- Mindforting (wisdom) -->
+  <section class="card">
+    <h2>Mindforting</h2>
+    <p class="muted">Detachment and flow: performance over outcome.</p>
+    <div class="row">
+      <input id="amWisdomPrompt" type="text" placeholder="Apply ‘be like water’ to a current challenge" />
+      <button class="mini" id="amWisdomSave">Save</button>
+    </div>
+    <div id="amWisdomList" class="list"></div>
+  </section>
+
+  <!-- Mindset battle -->
+  <section class="card">
+    <h2>Mindset battle</h2>
+    <p class="muted">Reframe fixed beliefs into growth statements.</p>
+    <div class="row">
+      <input id="amFixed" type="text" placeholder="Fixed belief (e.g., I’m not good at math)" />
+      <input id="amGrowth" type="text" placeholder="Growth reframe (e.g., I improve with practice)" />
+      <button class="mini" id="amMindsetSave">Save</button>
+    </div>
+    <div id="amMindsetList" class="list"></div>
+  </section>
+
+  <!-- Visualization -->
+  <section class="card">
+    <h2>Visualization</h2>
+    <p class="muted">Anchor goals in clear, tangible statements.</p>
+    <div class="row">
+      <input id="amVizGoal" type="text" placeholder="Define one clear goal for this week" />
+      <button class="mini" id="amVizSave">Save</button>
+    </div>
+    <div id="amVizList" class="list"></div>
+  </section>
+
+  <!-- Bulletproof planning -->
+  <section class="card">
+    <h2>Bulletproof planning</h2>
+    <p class="muted">Deadlines first → plan later. Time-block. Mutate weekly.</p>
+    <div class="row">
+      <input id="amDeadline" type="date" />
+      <input id="amPlanNote" type="text" placeholder="Plan note (e.g., 3 blocks before noon)" />
+      <button class="mini" id="amPlanSave">Save</button>
+    </div>
+    <div id="amPlanList" class="list"></div>
+  </section>
+
+  <!-- Pointed journaling -->
+  <section class="card">
+    <h2>Pointed journaling</h2>
+    <p class="muted">Conversational data, specific problems, solution orientation.</p>
+    <div class="row">
+      <input id="amJournal" type="text" placeholder="What happened? What did you learn?" />
+      <select id="amJournalTag">
+        <option>Energy</option>
+        <option>Focus</option>
+        <option>Avoidance</option>
+        <option>Anxiety</option>
+        <option>Win</option>
+      </select>
+      <button class="mini" id="amJournalSave">Add</button>
+    </div>
+    <div id="amJournalList" class="list"></div>
+  </section>
+
+  <!-- Self-determination theory -->
+  <section class="card">
+    <h2>Self-determination</h2>
+    <p class="muted">Increase autonomy, competence, and relatedness → intrinsic motivation.</p>
+    <div class="row">
+      <label>Autonomy <input type="range" id="amSDTAuto" min="0" max="10" value="5"></label>
+      <label>Competence <input type="range" id="amSDTComp" min="0" max="10" value="5"></label>
+      <label>Relatedness <input type="range" id="amSDTRel" min="0" max="10" value="5"></label>
+    </div>
+    <div class="progress"><div class="bar" id="amSDTBar"></div></div>
+    <p class="muted" id="amSDTText">Balanced motivation reduces burnout.</p>
+  </section>
+
+  <!-- Gamify progress (ethical) -->
+  <section class="card">
+    <h2>Progress & review</h2>
+    <p class="muted">Weekly points + mission progress → XP, levels, streaks.</p>
+    <div class="row">
+      <textarea id="amReview" class="input" placeholder="Short weekly review: wins, drags, change for next week"></textarea>
+      <button class="mini" id="amReviewSave">Save</button>
+    </div>
+    <div id="amReviewView" class="quote"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Clarity over compulsion. Evidence over gimmicks.</p>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+  Momentum.attackMode();
+</script>
+</body>
+</html>
