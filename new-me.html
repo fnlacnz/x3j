@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>New Me — Pointed journaling</title>
+<link rel="stylesheet" href="assets/style.css" />
+<meta name="color-scheme" content="dark light">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Momentum OS</a>
+    <div class="links">
+      <a href="attack-mode.html">Attack Mode</a>
+      <a href="nuke-today.html">Nuke Today</a>
+      <a class="active" href="new-me.html">New Me</a>
+      <a href="nuke-xyz.html">Nuke XYZ</a>
+      <a href="nuclear-system.html">Nuclear System</a>
+    </div>
+    <div class="tools">
+      <button class="mini" data-theme="auto">🌓</button>
+      <button class="mini" data-theme="dark">🌑</button>
+      <button class="mini" data-theme="light">☀️</button>
+      <button class="mini" data-theme="contrast">⚙️</button>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap grid-2">
+  <section class="card">
+    <h2>Quick capture</h2>
+    <div class="row">
+      <input id="jmEntry" type="text" placeholder="What happened? What did you do or feel?" />
+      <select id="jmTag">
+        <option>Energy</option>
+        <option>Focus</option>
+        <option>Avoidance</option>
+        <option>Anxiety</option>
+        <option>Win</option>
+      </select>
+      <button class="mini" id="jmAdd">Add</button>
+    </div>
+    <div id="jmList" class="list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Pattern detector</h2>
+    <p class="muted">Top tags and recurring contexts to prevent repeated mistakes.</p>
+    <div id="jmPatterns" class="chips"></div>
+    <div class="hr"></div>
+    <h3>Preventive moves</h3>
+    <div id="jmPrevent" class="list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Implementation intention</h2>
+    <p class="muted">If trigger happens → then action. Remove ambiguity.</p>
+    <div class="row">
+      <input id="jmTrigger" type="text" placeholder="Trigger (e.g., open phone at 8am)" />
+      <input id="jmAction" type="text" placeholder="Action (e.g., start deep work for 25m)" />
+      <button class="mini" id="jmLink">Link</button>
+    </div>
+    <div id="jmLinks" class="list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Identity reinforcement</h2>
+    <input id="jmIdentity" type="text" placeholder="I am the kind of person who ships daily." />
+    <button class="mini" id="jmIdentitySave">Save</button>
+    <p id="jmIdentityView" class="quote"></p>
+  </section>
+</main>
+
+<footer class="foot"><p>Reflect, detect, act.</p></footer>
+
+<script src="assets/app.js"></script>
+<script>
+  Momentum.newMe();
+</script>
+</body>
+</html>
